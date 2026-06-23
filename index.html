@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global/global.css">
+  <link rel="stylesheet" href="/css/abas/abaInicial.css">
+  <title>MAFE — Maturidade Feliz | Voleibol Adaptado</title>
+  <meta name="description" content="Site oficial da equipe Maturidade Feliz (MAFE) — Voleibol Adaptado. Acompanhe notícias, calendário e como participar.">
+</head>
+<body>
+
+  <header>
+    <div class="head-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <img src="imgs/brandLogo.jpeg" alt="Logo MAFE" class="brand-logo-img">
+          <div>
+            <p class="sub">Equipe de Voleibol Adaptado</p>
+            <h1 class="title"><span class="o">MA</span>TURIDADE  <span class="o">FE</span>LIZ <span class="o">(MAFE)</span></h1>
+          </div>
+        </a>
+      </div>
+
+      <nav id="navLinks">
+        <a href="participar.html">Participar</a>
+        <a href="quemSomos.html">Quem somos</a>
+        <a href="/maquetes/calendario.html">Calendário</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="/maquetes/galeria.html">Galeria</a>
+        <a href="apoiadores.html">Apoiadores</a>
+      </nav>
+
+      <button class="navToggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="hero" id="car">
+        <div class="slides" id="slides">
+
+          <a class="slide" href="noticias.html">
+            <img src="imgs/imgs slide/extensao.png" alt="7 anos MAFE">
+            <div class="slide-overlay"></div>
+            <div class="slide-text">
+              <span class="slide-tag">Apresentação</span>
+              <p class="slide-title">Apresentação do projeto de Extensão</p>
+              <p class="slide-desc">Dia 17/06 Acontecerá a apresentação do site do Maturidade Feliz para o projeto de extensao do IFSP</p>
+              </div>
+            <span class="slide-link-hint">Ler notícia →</span>
+          </a>
+          <!-- repita o bloco acima para cada notícia (todo o <a>), sim eu sei que no futuro vamos ter que injetar as noticias por banco de dados
+           e teremos que trocar essa parte inteira, mas por enquanto vamos manter assim na epoca nao sabia do problema -->
+
+          <a class="slide" href="noticias/aniversario-7-anos.html">
+            <img src="imgs/imgs slide/2 A 4 MAIO 2019 NIDE.jpg" alt="7 anos MAFE">
+            <div class="slide-overlay"></div>
+            <div class="slide-text">
+              <span class="slide-tag">Aniversário</span>
+              <p class="slide-title">7 Anos de Maturidade Feliz!</p>
+              <p class="slide-desc">A equipe MAFE celebra mais um ano de conquistas e muito vôlei adaptado.</p>
+              </div>
+            <span class="slide-link-hint">Ler notícia →</span>
+          </a>
+
+        </div>
+
+        <button class="prev" onclick="move(-1)">&#10094;</button>
+        <button class="next" onclick="move(1)">&#10095;</button>
+        <div class="dots" id="dots"></div>
+
+      </div>
+      
+      <div class="card news">
+        <h2>Últimas Notícias</h2>
+          
+        <ul>
+          <li><a href="noticias.html">Estudantes de ADS Apresentam Projetos de Extensão</a></li>
+          <li><a href="#">Desenvolvimento do site Maturidade Feliz foi iniciado</a></li>
+          <li><a href="#">Mudanca de design no site do Maturidade Feliz</a></li>
+          <li><a href="#">Apresentacao do site para o BRADWEB</a></li>
+          <li><a href="#">Maquetes para o site do Maturidade Feliz foram finalizadas</a></li>
+          <li><a href="#">Inicio do projeto para desenvolver um site para o Maturidade Feliz</a></li>
+          <li><a href="#">Aniversario: 7 anos de Maturidade Feliz</a></li>
+        </ul>
+
+        <button class="btn">SAIBA MAIS</button>
+
+      </div>
+
+      <div class="ads">
+        <div class="card ad">
+          <h2>Apoiadores</h2>
+
+          <!-- Carrossel ads 1 -->
+          <a class="ad-link" id="ad-link-1" href="#">
+            <div class="ad-box">
+              <img id="ad-img-1" src="" alt="">
+            </div>
+            <p id="sponsor-1"></p>
+          </a>
+          <div class="dots" id="adots-1" style="position:static; background:none; padding:8px 0 0;"></div>
+
+          <!-- Carrossel ads 2 -->
+          <a class="ad-link" id="ad-link-2" href="#" style="margin-top:16px; display:block;">
+            <div class="ad-box">
+              <img id="ad-img-2" src="" alt="">
+            </div>
+            <p id="sponsor-2"></p>
+          </a>
+          <div class="dots" id="adots-2" style="position:static; background:none; padding:8px 0 0;"></div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <div class="contacts">
+        <a href="tel:11902439028"><span class="ic">&#9742;</span><span>contato: 1190243-9028</span></a>
+        <a href="mailto:maturidadef@gmail.com"><span class="ic">&#9993;</span><span>email: Mafe@gmail.com.br</span></a>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="WhatsApp" style="background:#25D366"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1.1 2.8 1.2 3c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.6-.5zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+        <a href="#" aria-label="Instagram" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook" style="background:#1877F2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.5-1.5h1.5V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.6v7h2.9z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/script.js"></script>
+<script src="js/carrossel.js"></script>
+</body>
+</html>

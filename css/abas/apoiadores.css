@@ -1,0 +1,291 @@
+.wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+
+/* =====================
+   MAIN
+   ===================== */
+
+main {
+  padding-bottom: 120px;
+  background: #f4f4f5;
+}
+
+
+
+/* =====================
+   HERO
+   ===================== */
+
+.page-hero {
+  position: relative;
+  background: linear-gradient(120deg, var(--orange) 80%, var(--orange-dark) 100%);
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 15px solid #000;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.06) 1px, transparent 1px),
+    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px;
+  pointer-events: none;
+}
+
+.hero-content {
+  width: 100%;
+  padding: 40px 40px;
+  z-index: 2;
+}
+
+.page-title {
+  color: var(--dark);
+  font-size: 56px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 0px rgba(255,255,255,0.15);
+  word-spacing: 10px
+}
+
+.hero-illustration {
+  position: absolute;
+  right: -40px;
+  top: -80px;
+  height: 300px;
+  width: 300px;
+  opacity: 0.2;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* =====================
+   SEÇÃO DE APOIADORES
+   ===================== */
+
+.supporters-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.supporters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 35px;
+  justify-content: center;
+}
+
+.supporter-item {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.supporter-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efeito Hover */
+.supporter-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* =====================
+   DETALHES EM TELA CHEIA
+   ===================== */
+
+.supporter-detail-fullscreen {
+  min-height: 100vh; 
+  display: block;    
+  padding-top: 130px; 
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+#apoiador1 {
+  margin-top: 60px;
+}
+
+.detail-card {
+  display: block;
+  background: #fdfdfd;
+  border-left: 6px solid var(--orange);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  width: 100%;
+}
+
+.detail-image-box {
+  display: block;
+  width: 100%;
+  max-width: 280px; 
+  height: 280px;    
+  margin: 0 auto 30px auto; 
+}
+
+.detail-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.detail-info-box {
+  display: block;
+  width: 100%;
+}
+
+.detail-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.detail-date {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.detail-text-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.detail-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white) !important;
+  padding: 16px 32px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.detail-btn:hover {
+  background: var(--orange-hover);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 850px) {
+  .detail-card {
+    display: table;
+  }
+  .detail-image-box {
+    display: table-cell;
+    vertical-align: top;
+    width: 280px; 
+    min-width: 280px;
+    padding-right: 40px;
+    margin: 0; 
+  }
+  .detail-info-box {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+/* Ajustes finos para telas menores/celulares */
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 140px;
+    border-bottom-width: 16px;
+  }
+
+  .hero-content {
+    padding: 30px 24px;
+  }
+
+  .page-title {
+    font-size: 38px;
+  }
+
+  .hero-illustration {
+    height: 150px;
+    width: 150px;
+    right: -30px;
+    top: -20px;
+  }
+
+  .supporter-detail-fullscreen {
+    padding-top: 100px;
+    min-height: auto;
+  }
+
+  #apoiador1 {
+    margin-top: 30px;
+  }
+
+  .detail-image-box {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .detail-title {
+    font-size: 26px;
+  }
+
+  .detail-text-content p {
+    font-size: 16px;
+  }
+
+  .detail-card {
+    padding: 24px;
+  }
+}
+
+/* =====================
+   RESPONSIVIDADE — GRID DE APOIADORES
+   ===================== */
+@media (max-width: 992px) {
+  .supporters-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .supporters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}

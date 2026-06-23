@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/* =====================
+   VARIÁVEIS e BASICO
+   ===================== */
+
+:root {
+  --orange: #F07A1A;
+  --orange-hover: #d96a10;
+  --orange-dark: #b85a0e;
+  --dark: #000000;
+  --white: #FFFFFF;
+  --radius: 1rem;
+  --shadow: 0 20px 50px -20px rgba(0,0,0,.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+
+/* =====================
+   HEADER
+   ===================== */
+
+header {
+  background: #fff;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  border-bottom: 3px solid var(--orange);
+}
+
+.head-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 24px;
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand h1 {
+  word-spacing: 5px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.brand-link:hover .brand-logo-img {
+  transform: scale(1.04);
+}
+
+.sub {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+h1.title {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  color: var(--dark);
+}
+
+h1.title .o {
+  color: var(--orange);
+}
+
+
+
+/* =====================
+   NAV
+   ===================== */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 24px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+nav a {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--orange);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--dark);
+  transition: width 0.25s ease;
+}
+
+nav a.active, nav a:hover {
+  color: var(--dark);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.navToggle {
+  display: none; /* Fica oculto se tela for grande o bastante */
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navToggle span {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  background: var(--orange);
+  transition: transform .25s, opacity .25s;
+}
+
+
+
+/* =====================
+   FOOTER
+   ===================== */
+
+footer {
+  background: var(--dark);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 3px solid var(--orange);
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contacts a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.contacts a:hover {
+  color: var(--orange);
+}
+
+.ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: var(--orange);
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contacts a:hover .ic {
+  background: var(--orange-hover);
+  transform: scale(1.1);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.socials a:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.4);
+}
+
+.socials svg {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+/* ===================================================
+   RESPONSIVIDADE PARA CELULARES (320px até 420px)
+   — apenas header/footer
+   =================================================== */
+@media (max-width: 420px) {
+
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .brand-logo-img {
+    height: 40px !important;
+    display: block !important;
+  }
+
+  .brand-link {
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: flex-start !important; 
+    gap: 10px !important;
+  }
+
+  h1.title {
+    visibility: visible !important;
+    position: relative !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    color: transparent !important; 
+    display: inline-block !important;
+    text-align: left !important;
+    width: 65px !important; 
+  }
+
+  h1.title::after {
+    content: "MAFE" !important;
+    visibility: visible !important;
+    color: var(--dark) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  h1.title .o {
+    display: none !important;
+  }
+
+  .sub {
+    display: none !important;
+  }
+
+  .head-inner {
+    padding: 10px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* FOOTER COMPACTO */
+  footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: var(--dark) !important;
+  }
+
+  .foot {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 12px !important;
+    gap: 4px !important;
+  }
+
+  .contacts {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .contacts a {
+    font-size: 10px !important;
+    gap: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .ic {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 18px !important;
+    width: 18px !important;
+    font-size: 9px !important;
+    border-radius: 50% !important;
+    background: var(--orange) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .socials {
+    gap: 6px !important;
+  }
+
+  .socials a {
+    height: 26px !important;
+    width: 26px !important;
+  }
+
+  .socials svg {
+    height: 14px !important;
+    width: 14px !important;
+  }
+}
+
+
+
+/* ===================================================
+   RESPONSIVIDADE E MENU RETRÁTIL (768px)
+   — apenas header/nav
+   =================================================== */
+@media (max-width: 768px) {
+
+  /* Exibe o botão do menu */
+  .navToggle {
+    display: inline-flex;
+  }
+
+  /* Esconde o menu de links horizontal padrão */
+  nav {
+    display: none !important;
+  }
+
+  /* O MENU QUANDO ESTIVER ABERTO (.open) VIA JS */
+  nav.open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 4px solid var(--orange);
+    padding: 24px;
+    gap: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  nav.open a {
+    font-size: 20px !important;
+    text-align: center;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(240, 122, 26, 0.1);
+  }
+
+  nav.open a:last-child {
+    border-bottom: none;
+  }
+
+  .brand-logo-img {
+    height: 44px !important;
+  }
+
+  h1.title {
+    font-size: 16px !important;
+  }
+
+  .sub {
+    display: none !important;
+  }
+
+  .head-inner {
+    padding: 10px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .foot {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contacts {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+
+
+/* ===================================================
+   AJUSTE DE RESPONSIVIDADE PARA TABLETS/TELAS (1024px)
+   — apenas header
+   =================================================== */
+@media (max-width: 1024px) {
+
+  .brand-logo-img {
+    height: 48px !important;
+  }
+
+  h1.title {
+    font-size: 22px !important;
+    letter-spacing: -0.2px;
+  }
+
+  .sub {
+    display: none !important;
+  }
+
+  .head-inner {
+    padding: 12px 20px;
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 16px !important;
+  }
+}
+
+
+
+/* ===================================================
+   AJUSTE DE RESPONSIVIDADE (1440px)
+   — apenas header
+   =================================================== */
+@media (max-width: 1440px) {
+  .brand-logo-img {
+    height: 65px;
+  }
+
+  h1.title {
+    font-size: 24px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  nav {
+    gap: 8px 16px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+}
